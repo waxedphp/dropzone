@@ -1,0 +1,20 @@
+{
+    "name": "waxedphp/dropzone",
+    "description": "DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews - within WaxedPHP environment.",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.3.0",
+    "autoload": {
+        "psr-4": {
+            "Waxedphp\\Dropzone\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JasterStary"
+        }
+    ],
+    "require": {
+      "waxedphp/waxedphp":"^0.3.0"
+    }
+}

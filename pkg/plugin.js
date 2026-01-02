@@ -169,6 +169,16 @@
             this._display_existing_file(this.existingFiles[i]);
           }
         }
+        that.dropzone.on("completemultiple", function() {
+          //console.log('completemultiple');
+        });
+        that.dropzone.off("queuecomplete").on("queuecomplete", function() {
+          console.log('queuecomplete');
+          that.pluggable.sendData({
+            'action': 'queuecomplete'
+          }, that.cfg.url, that);
+        });        
+          
       },
 
       this.init=function() {

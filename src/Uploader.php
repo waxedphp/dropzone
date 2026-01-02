@@ -227,7 +227,9 @@ class Uploader {
         return;
       }
     } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      if((isset($_POST['dzuuid']) && trim($_POST['dzuuid'])!='')){//resumableIdentifier
+      if((isset($_POST['action']) && trim($_POST['action'])=='queuecomplete')){
+        $this->trigger('onQueueComplete');
+      } else if((isset($_POST['dzuuid']) && trim($_POST['dzuuid'])!='')){//resumableIdentifier
         $this->storeDropzoneChunks();
       } else {
         $this->storeFiles();
